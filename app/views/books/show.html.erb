@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Titel:</b>
+  <%= @book.title %>
+</p>
+
+<p>
+  <b>Auflage:</b>
+  <%= @book.edition %>
+</p>
+
+<p>
+  <b>Veröffentlichungsdatum:</b>
+  <%= @book.published %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @book.genre %>
+</p>
+
+<p>
+  <b>Zusammenfassung:</b>
+  <%= @book.abstract %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @book.tags %>
+</p>
+
+<p>
+  <b>Autoren:</b>
+<td>
+  <% @book.users.each do |user| %>
+      <%= user.email %>
+  <% end %>
+</td>
+</p>
+
+
+<%= link_to 'Bearbeiten', edit_book_path(@book) %> |
+<%= link_to 'Zurück', books_path %>

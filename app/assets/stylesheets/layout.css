@@ -1,0 +1,16 @@
+div#layout_container {
+}
+
+div#top {
+    height: 100px;
+    float: right;
+}
+
+div#left {
+    width: 200px;
+    float: left;
+}
+
+div#content {
+    float: left;
+}

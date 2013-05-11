@@ -2,13 +2,30 @@
 <html>
 <head>
   <title>BookWriter</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div id="top">
+
+  <% if user_signed_in? %>
+      <%= link_to "Home", books_path %> |
+      <%= "Account: " + current_user.username %> |
+      <%= link_to 'Mein Account', edit_user_registration_path %> |
+      <%= link_to 'Meine Daten', edit_user_path(current_user) %> |
+      <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+  <% end %>
+
+</div>
+
+<div id="layout_container">
+
+  <div id="left">Hier kommt die TreeView rein!</div>
+  <div id="content"><%= yield %></div>
+
+</div>
 
 </body>
 </html>
